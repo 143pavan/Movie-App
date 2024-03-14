@@ -1,0 +1,39 @@
+
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="javascript:void(0)">Movies Search</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mynavbar">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="javascript:void(0)"></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="javascript:void(0)"></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="javascript:void(0)"></a>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2"  [(ngModel)]="searchQuery"  type="text" placeholder="Search for a movie" name="moviename">
+        <button   (click)="onSearchInput()" class="btn btn-primary" type="button">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+<div class="row">
+<ul class="d-flex flex-wrap">
+  <li *ngFor="let movie of movies" class="card">
+    <div class="card-header">
+      {{ movie.Title }}
+    </div>
+   <div class="card-body">
+    <img src="{{movie.Poster}}" alt="{{movie.title}}" />
+   </div>
+  </li>
+</ul>
+</div>
+
